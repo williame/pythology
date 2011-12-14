@@ -1,0 +1,553 @@
+rshetty@rShetty-Linux:~/pythology$ python
+Python 2.7.2+ (default, Oct  4 2011, 20:03:08) 
+[GCC 4.6.1] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> sys.path
+['', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7']
+>>> sys
+<module 'sys' (built-in)>
+>>> sys.path.append('/home/rshetty/pythology')
+>>> sys.path
+['', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-linux2', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PIL', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/lib/pymodules/python2.7', '/home/rshetty/pythology']
+>>> def fib(n):
+... print 'n=',n
+  File "<stdin>", line 2
+    print 'n=',n
+        ^
+IndentationError: expected an indented block
+>>>     print 'n=',n
+  File "<stdin>", line 1
+    print 'n=',n
+    ^
+IndentationError: unexpected indent
+>>> def fib(n):
+...     print 'n=',n
+...     if(n>1:
+  File "<stdin>", line 3
+    if(n>1:
+          ^
+SyntaxError: invalid syntax
+>>> def fib(n):
+...     print 'n=',n
+...     if(n>1):
+...             return n*fib(n-1)
+...     else:
+...             print 'end of line'
+...             return 1
+... 
+>>> 
+>>> a = [1,2,3,4]
+>>> a.append(3)
+>>> a
+[1, 2, 3, 4, 3]
+>>> a.length
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'length'
+>>> a.length()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'length'
+>>> d = {"name":"rajeev,"age":"20"}
+  File "<stdin>", line 1
+    d = {"name":"rajeev,"age":"20"}
+                           ^
+SyntaxError: invalid syntax
+>>> d = {"name":"rajeev, "age":"20"}
+  File "<stdin>", line 1
+    d = {"name":"rajeev, "age":"20"}
+                            ^
+SyntaxError: invalid syntax
+>>> d = {"name":"rajeev", "age":"20"}
+>>> d[name]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'name' is not defined
+>>> d["name"]
+'rajeev'
+>>> d["name"+1]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: cannot concatenate 'str' and 'int' objects
+>>> d["name"] = "shashi"
+>>> d["name"]
+'shashi'
+>>> d["age"]
+'20'
+>>> d
+{'age': '20', 'name': 'shashi'}
+>>> del d["name"]
+>>> d
+{'age': '20'}
+>>> d.clear()
+>>> d
+{}
+>>> d.sort()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'sort'
+>>> d["name"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'name'
+>>> del d
+>>> d
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'd' is not defined
+>>> li = ["3","rajeev","ise","rvce"]
+>>> li
+['3', 'rajeev', 'ise', 'rvce']
+>>> li[3]
+'rvce'
+>>> li[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> li[-1]
+'rvce'
+>>> li[0]
+'3'
+>>> li.len()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'len'
+>>> len(li)
+4
+>>> li
+['3', 'rajeev', 'ise', 'rvce']
+>>> li[:2]
+['3', 'rajeev']
+>>> li[2:]
+['ise', 'rvce']
+>>> li.append(3)
+>>> li
+['3', 'rajeev', 'ise', 'rvce', 3]
+>>> li.insert(2,"new")
+>>> li
+['3', 'rajeev', 'new', 'ise', 'rvce', 3]
+>>> li.extend(["two"])
+>>> li
+['3', 'rajeev', 'new', 'ise', 'rvce', 3, 'two']
+>>> li.index(3
+... )
+5
+>>> li.index('3')
+0
+>>> li.index(new)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'new' is not defined
+>>> li.remove(3)
+>>> li
+['3', 'rajeev', 'new', 'ise', 'rvce', 'two']
+>>> li.pop()
+'two'
+>>> li
+['3', 'rajeev', 'new', 'ise', 'rvce']
+>>> li + ["d","E"]
+['3', 'rajeev', 'new', 'ise', 'rvce', 'd', 'E']
+>>> li * 3
+['3', 'rajeev', 'new', 'ise', 'rvce', '3', 'rajeev', 'new', 'ise', 'rvce', '3', 'rajeev', 'new', 'ise', 'rvce']
+>>> tu = ("a",3,"2.090","hi this is rajeev")
+>>> tu
+('a', 3, '2.090', 'hi this is rajeev')
+>>> t[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 't' is not defined
+>>> tu[0]
+'a'
+>>> tu[0:3]
+('a', 3, '2.090')
+>>> tu[0:2]
+('a', 3)
+>>> li[0:2]
+['3', 'rajeev']
+>>> li[2:3]
+['new']
+>>> li[2:4]
+['new', 'ise']
+>>> v
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'v' is not defined
+>>> v = 1
+>>> c
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'c' is not defined
+>>> v
+1
+>>> v = ('a','b','c')
+>>> v
+('a', 'b', 'c')
+>>> (x,y,z) = v
+>>> v
+('a', 'b', 'c')
+>>> x
+'a'
+>>> y
+'b'
+>>> z
+'c'
+>>> (x,y) = v
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack
+>>> range97)
+  File "<stdin>", line 1
+    range97)
+           ^
+SyntaxError: invalid syntax
+>>> range(7)
+[0, 1, 2, 3, 4, 5, 6]
+>>> a = "raj"
+>>> b = "shetty"
+>>> ""%s=%s" %(a,b)
+  File "<stdin>", line 1
+    ""%s=%s" %(a,b)
+         ^
+SyntaxError: invalid syntax
+>>> ""%s= s" %(a,b)
+  File "<stdin>", line 1
+    ""%s= s" %(a,b)
+                  ^
+SyntaxError: EOL while scanning string literal
+>>> "%s= s" %(a,b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: not all arguments converted during string formatting
+>>> "%s=s" %(a,b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: not all arguments converted during string formatting
+>>> "%s=%s" %(a,b)
+'raj=shetty'
+>>> li
+['3', 'rajeev', 'new', 'ise', 'rvce']
+>>> [i*2 for i in li]
+['33', 'rajeevrajeev', 'newnew', 'iseise', 'rvcervce']
+>>> li.append(3)
+>>> [i*2 for i in li]
+['33', 'rajeevrajeev', 'newnew', 'iseise', 'rvcervce', 6]
+>>> d.items()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'd' is not defined
+>>> d = { "name":"rajeev"
+... }
+>>> d.items()
+[('name', 'rajeev')]
+>>> d.keys()
+['name']
+>>> d.values()
+['rajeev']
+>>> d
+{'name': 'rajeev'}
+>>> d.extend()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'extend'
+>>> d = {"age":20}
+>>> d
+{'age': 20}
+>>> d.insert()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'insert'
+>>> d = {"name":rajeev","age":20}
+  File "<stdin>", line 1
+    d = {"name":rajeev","age":20}
+                        ^
+SyntaxError: invalid syntax
+>>> d = {"name":rajeev","age":"20"}
+  File "<stdin>", line 1
+    d = {"name":rajeev","age":"20"}
+                        ^
+SyntaxError: invalid syntax
+>>> d = {"name":"rajeev","age":"20"}
+>>> d
+{'age': '20', 'name': 'rajeev'}
+>>> ";".join("d")
+'d'
+>>> d
+{'age': '20', 'name': 'rajeev'}
+>>> ";".join(d)
+'age;name'
+>>> type(1)
+<type 'int'>
+>>> type("name")
+<type 'str'>
+>>> li = []
+>>> li
+[]
+>>> dir(li)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__delslice__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getslice__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__setslice__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> li.sort(_)
+>>> li
+[]
+>>> d = {}
+>>> dir(d)
+['__class__', '__cmp__', '__contains__', '__delattr__', '__delitem__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'has_key', 'items', 'iteritems', 'iterkeys', 'itervalues', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values', 'viewitems', 'viewkeys', 'viewvalues']
+>>> import string
+>>> string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+>>> string.join at 00C55A7C
+  File "<stdin>", line 1
+    string.join at 00C55A7C
+                 ^
+SyntaxError: invalid syntax
+>>> string.join
+<function join at 0xb764c764>
+>>> callable(string.punctuation)
+False
+>>> callable(string.join)
+True
+>>> li
+[]
+>>> li.pop
+<built-in method pop of list object at 0xb7645c4c>
+>>> getattr(li)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: getattr expected at least 2 arguments, got 1
+>>> getattr(li,"append")("moe")
+>>> li
+['moe']
+>>> callable(li.pop)
+True
+>>> getattr(li,"pop")
+<built-in method pop of list object at 0xb7645c4c>
+>>> 
+>>> 
+>>> 'a' and 'b'
+'b'
+>>> 3 and 2
+2
+>>> 2 and 3
+3
+>>> 2 and None
+>>> [] and 2
+[]
+>>> '' or a and b
+'shetty'
+>>> b
+'shetty'
+>>> '' or a
+'raj'
+>>> '' or 'a'
+'a'
+>>> a = lambda i: i*2
+>>> a
+<function <lambda> at 0xb763bf44>
+>>> g(#)
+... g(#)
+... 
+... 
+KeyboardInterrupt
+>>> g(3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'g' is not defined
+>>> a = lambda i: i*2
+>>> a(3)
+6
+>>> s = "rajeev is \n my name"
+>>> s
+'rajeev is \n my name'
+>>> s = "rajeev is\nmy name"
+>>> s
+'rajeev is\nmy name'
+>>> s = "rajeev  is\nmy name"
+>>> s
+'rajeev  is\nmy name'
+>>> print s
+rajeev  is
+my name
+>>> print s.split()
+['rajeev', 'is', 'my', 'name']
+>>> li = ['a','b','c']
+>>> li
+['a', 'b', 'c']
+>>> print "\n".join(li)
+a
+b
+c
+>>> print "\n".split(li)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: expected a character buffer object
+>>> split(li)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'split' is not defined
+>>> import types
+>>> FunctionType
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'FunctionType' is not defined
+>>> types.FunctionType
+<type 'function'>
+>>> from types import FunctionType
+>>> FunctonType
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'FunctonType' is not defined
+>>> FunctionType
+<type 'function'>
+>>> class rocking
+  File "<stdin>", line 1
+    class rocking
+                ^
+SyntaxError: invalid syntax
+>>> class Rocking
+  File "<stdin>", line 1
+    class Rocking
+                ^
+SyntaxError: invalid syntax
+>>> class Rocking:
+...     pass
+... 
+>>> 
+>>> class instant:
+...     __init__(self,a)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in instant
+NameError: name '__init__' is not defined
+>>> class instant:
+...     __init__(self,a)
+...     __init__(self,a)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in instant
+NameError: name '__init__' is not defined
+>>> class instant:
+...     __init__(self,a)
+...             
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in instant
+NameError: name '__init__' is not defined
+>>> class instant:
+...     __init__(self,a):
+  File "<stdin>", line 2
+    __init__(self,a):
+                    ^
+SyntaxError: invalid syntax
+>>> class instant:
+...     __init__(self,a):
+  File "<stdin>", line 2
+    __init__(self,a):
+                    ^
+SyntaxError: invalid syntax
+>>>     __init__(self,a):
+  File "<stdin>", line 1
+    __init__(self,a):
+    ^
+IndentationError: unexpected indent
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> a = [1,2,3,4]
+>>> a
+[1, 2, 3, 4]
+>>> print sorted(a)
+[1, 2, 3, 4]
+>>> a
+[1, 2, 3, 4]
+>>> b = [23,12,33,100,1]
+>>> b
+[23, 12, 33, 100, 1]
+>>> sorted(b)
+[1, 12, 23, 33, 100]
+>>> sorted(b,reverse=True)
+[100, 33, 23, 12, 1]
+>>> import re
+>>> str = "Rajeev is an awesome programmer"
+>>> match = re.search(r'word:,str)
+  File "<stdin>", line 1
+    match = re.search(r'word:,str)
+                                 ^
+SyntaxError: EOL while scanning string literal
+>>> match = re.search(,str)
+  File "<stdin>", line 1
+    match = re.search(,str)
+                      ^
+SyntaxError: invalid syntax
+>>> match = re.search(r'awe\w\w\w\w,str)
+  File "<stdin>", line 1
+    match = re.search(r'awe\w\w\w\w,str)
+                                       ^
+SyntaxError: EOL while scanning string literal
+>>> match = re.search(r'awe\w\w\w\w',str)
+>>> match
+<_sre.SRE_Match object at 0xb763bf38>
+>>> match = re.search(r'we\w\w\w',str)
+>>> match
+<_sre.SRE_Match object at 0xb7642720>
+>>> match = re.search(r'z\w\w\w',str)
+>>> match
+>>> import os
+>>> os.listdir(/home/rshetty)
+  File "<stdin>", line 1
+    os.listdir(/home/rshetty)
+               ^
+SyntaxError: invalid syntax
+>>> os.listdir('/home/rshetty')
+['.vimrc', 'me', 'HTML5F.W.Des.demon', '1.html~', 'vid.html~', 'part.rar', 'mozilla-firefox-addons-real-fire-fox.jpg', 'Uplkoad', 'quest.doc', 'show_bug.cgi_files', 'Best-Math-Question-EVAR-625x352.jpg', 'testday', 'cprogs', 'Explore-C', 'jOz-Pl83uh8.webm', 'php', '2.c', '.bash_logout', '.idlerc', 'Safe Mode_files', 'vid.html', 'final1.zip', 'rshetty', 'PPP-logfile', '.kdevduchain', 'diaspora', 'kde', 'Desktop', 'nightly6.png', 'Student-portal', 'v8HoVdenZFM.webm.part', '11.html', '.fontconfig', '.java', 'sur5(songs.pk).mp3', 'fox', 'c', 'Downloads', '.dropbox', 'rajeevqtkde_files', 'nightly4.png', 'qna', '.11.c.swp', 'Main_Server.java', '.Xauthority', 'final1', '2011-11-19 20.51.11.jpg', 'Project-screen.zip', 'pres.odp', '.repopickle_.gitconfig', '.kde', '2.css~', '.adobe', 'SCS7SIeF30E.webm', '.macromedia', '1.css', 'console', '.gvfs', '.xchat2', 'html5', 'frame.html', '.gphpedit', 'The.Vampire.Diaries.S03E09.HDTV.XviD-2HD', 'ada', '.openoffice.org', '7.c', 'comments.frm', 'Public', 'lib', 'date.html~', 'Project-screen', 'cat1', 'mozilla-central', 'rKzZEtxIX14.webm.part', '.sudo_as_admin_successful', '299298_10150302612975699_614755698_7825263_2087659_n (1).jpg', 'java.html~', '.eclipse', 'rubygems.deb', '1.cpp', 'Socorro-Tests', 'count.pl', '.gnome2_private', '33.Strings.pdf', 'linux-3.0.tar.bz2', '.libreoffice', 'Hk5oXFtYLwE.webm', '6LMVOTfp2SI.webm', 'Dropbox', 'Blog', 'codebutler', 'blog', 'comic.png', 'aUqbg-PPVyc.webm', '3.c', 'da.jpg', '.pip', 'oomd.pdf', 'fusion-xhtml (1).rar', 'pythology', 'apple.jpg', 'Explore-Cplusplus', 'BB', '.xsession-errors', 'ZDR433b0HJY.webm.part', '.emacs.d', '.pki', 'qa.txt', 'share', 'mailalsoimplementated.zip', 'rvce.html~', 'flow.jpg', 'posts.frm', '.project-neon-kde', 'jo_B4LTHi3I.webm.part', 'qa.txt~', '.purple', 'ans', 'firefox_12.jpg', 'digital signature', 'get-shit-done', 'workspace', 'Documents', '.cache', '1.sh', '.mozilla', '1.html', '295829_248078015239382_125278694185982_671253_1680612316_n.jpg', 'snapshot7.png', '.gegl-0.0', '.appdata', 'nightly.png', 'OReilly.Programming.Flex.2.Apr.2007', '.pulse-cookie', '.masti', 'dgas', 'id7k6gUkZ8Y.webm', '190220090.pdf', '5.c', 'MD5.java', '.profile', 'Firefox', 'Music', 'OSI_2011_logo.jpg', 'Project', 'Safe Mode.html', 'Code', 'fire', 'date.html', 'tea.c', 'dolphin.desktop', '.gconf', 'sample_app', 'r.flv', 'final1.jpg', 'aAtW8furwr0.webm', '.bashrc', 'nightly7.png', 'e.mp4', 'bin', 'snapshot22.png', '.gitconfig', 'PHP_Hangman_Game - Copy.zip', 'RSA.jpg', 'jquery', '.ssh', 'hs6tF-RDX4U.webm.part', 'snapshot6.png', 'junk', 'sha256New.java~', 'SAI_7501.JPG', '.dbus', 'mozilla', '.netbeans', 'SAI_7501.jpeg', '.subversion', 'achievements.frm', 'jsbits', 'mgwiCUpuCxA.webm', '99-recurrences.pdf', 'Videos', 'tea.h', 'PHP-Explore', 'Resume.doc', '9.c', '.gnome2', 'zonoid-cgta.pdf', '.config', 'file.txt', '.emacs', 'The Dirty Picture (2011) 1CD PDVDRip XviD MP3 xDM(www.mastitorrents.com)', 'amarok', 'R8a9n1qSkng.webm.part', 'FileByte.class', 'mailalsoimplementated', 'sha256New.java', 'snapshot5.png', 'J64Pmi_jEiQ.webm.part', 'FileByte.java', 'snapshot3.png', 'u404SLJj7ig.webm', 'rshetty.pub', '.swt', 'Vad', '.gimp-2.6', '11.sh', 'demo', 'Pictures', 'WebService', 'proj-screen', '.thumbnails', 'fusion-xhtml', 'lab', 'amarok-bugs', '.gtkrc-2.0-kde4', 'show_bug.cgi.html', 'iphonandroiddifference.png', '.xchm', 'Templates', 'test.c', 'report19.pdf', 'c_rc4', 'AJAXSequence.jpg', 'user.frm', '.bash_history', '.dmrc', '.pulse', '11.c', '.xine', '.gnupg', '6.c', 'rvce.html', '.repoconfig', 'javascript6_examples', 'snapshot4.png', '.viminfo', 'www.rvce.edu.in', '.esd_auth', 'OleFcGMPZKI.webm', 'java.html', 'DSC01521.JPG', 'androsid', 'rajeevqtkde.html', 'snapshot2.png', 'tags.frm', 'snapshot1.png', 'db.opt', '293324_226298540760370_100001406784964_662609_1535319887_n.jpg', 'prime.ppt', '1.css~', '1.c', '.local', '8.c', 'Lzr73dKcjHg.webm', 'nightly5.png', '4.c', 'Qt-Apps', 'Product_Life_Cycle_Management.pdf', '.gem', 'Main_Server.class', '.netbeans-registration', '.dropbox-dist', 'idutbackup-1-0 - Copy.zip', '.gconfd', 'hidden.html', '.gstreamer-0.10', 'webfilebrowser-0.4b14 - Copy.zip', 'snapshot8.png', '2.css', 'php-Explore', '.directory', '.recently-used', '.android', 'showoff', 'tumblr_lma2cxCEtY1qkjlgho1_1280.jpg', 'my.html', 'help', 'oomd.doc']
+>>> 
+>>> 
+>>> os.path.abspath('.')
+'/home/rshetty/pythology'
+>>> os.path.join('/home/rshetty','new')
+'/home/rshetty/new'
+>>> os.path.exists('/home/rshetty/new'
+... )
+False
+>>> os.path.exists('/home/rshetty/')
+True
+>>> os.mkdir('/home/rshetty/new')
+>>> 
+>>> shutil.copy(/home/rshetty/oomd.doc','.')
+  File "<stdin>", line 1
+    shutil.copy(/home/rshetty/oomd.doc','.')
+                ^
+SyntaxError: invalid syntax
+>>> shutil.copy('/home/rshetty/oomd.doc','.')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'shutil' is not defined
+>>> import shutil;
+>>> shutil.copy('/home/rshetty/oomd.doc','.')
+>>> 
+>>> 
+>>> import commands;
+>>> 
+>>> commands.getstatusoutput('ls -l')
+(0, 'total 8\n-rw-rw-r-- 1 rshetty rshetty 125 2011-12-15 00:37 init.py\n-rw-rw-r-- 1 rshetty rshetty 158 2011-12-14 23:43 README')
+>>> 
+>>> commands.getoutput('ls -l')
+'total 8\n-rw-rw-r-- 1 rshetty rshetty 125 2011-12-15 00:37 init.py\n-rw-rw-r-- 1 rshetty rshetty 158 2011-12-14 23:43 README'
+>>> 
+>>> 
+>>> import urllib
+>>> urllib.urlopen('http://www.google.com/')
+<addinfourl at 3072643276L whose fp = <socket._fileobject object at 0xb723a9ec>>
+>>> url = urllib.urlopen('http://www.google.com/')
+>>> url.read()
+'<!doctype html><html><head><meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Google</title><script>window.google={kEI:"KDPpTtDDKsznrAe5nuyWBw",getEI:function(a){var b;while(a&&!(a.getAttribute&&(b=a.getAttribute("eid"))))a=a.parentNode;return b||google.kEI},https:function(){return window.location.protocol=="https:"},kEXPI:"33492",kCSI:{e:"33492",ei:"KDPpTtDDKsznrAe5nuyWBw"},authuser:0,\nml:function(){},kHL:"en",time:function(){return(new Date).getTime()},log:function(a,b,c,e){var d=new Image,g=google,h=g.lc,f=g.li,j="";d.onerror=(d.onload=(d.onabort=function(){delete h[f]}));h[f]=d;if(!c&&b.search("&ei=")==-1)j="&ei="+google.getEI(e);var i=c||"/gen_204?atyp=i&ct="+a+"&cad="+b+j+"&zx="+google.time(),k=/^http:/i;if(k.test(i)&&google.https()){google.ml(new Error("GLMM"),false,{src:i});\ndelete h[f];return}d.src=i;g.li=f+1},lc:[],li:0,Toolbelt:{},y:{},x:function(a,b){google.y[a.id]=\n[a,b];return false}};\nwindow.google.sn="webhp";window.google.timers={};window.google.startTick=function(a,b){window.google.timers[a]={t:{start:(new Date).getTime()},bfr:!(!b)}};window.google.tick=function(a,b,c){if(!window.google.timers[a])google.startTick(a);window.google.timers[a].t[b]=c||(new Date).getTime()};google.startTick("load",true);try{}catch(u){}\nvar _gjwl=location;function _gjuc(){var e=_gjwl.href.indexOf("#");if(e>=0){var a=_gjwl.href.substring(e);if(a.indexOf("&q=")>0||a.indexOf("#q=")>=0){a=a.substring(1);if(a.indexOf("#")==-1){for(var c=0;c<a.length;){var d=c;if(a.charAt(d)=="&")++d;var b=a.indexOf("&",d);if(b==-1)b=a.length;var f=a.substring(d,b);if(f.indexOf("fp=")==0){a=a.substring(0,c)+a.substring(b,a.length);b=c}else if(f=="cad=h")return 0;c=b}_gjwl.href="/search?"+a+"&cad=h";return 1}}}return 0}function _gjp(){!(window._gjwl.hash&&\nwindow._gjuc())&&setTimeout(_gjp,500)};\nwindow._gjp && _gjp()</script><style>#gbar,#guser{font-size:13px;padding-top:1px !important}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}</style><style id=gstyle>body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}body,td,a,p,.h{font-family:arial,sans-serif}.h{color:#36c;font-size:20px}.q{color:#00c}.ts td{padding:0}.ts{border-collapse:collapse}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px}.gsfi,.lst{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{border-bottom:solid 1px #e7e7e7;border-right:solid 1px #e7e7e7;display:-moz-inline-box;display:inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}a.gb1,a.gb2,a.gb3,a.gb4{color:#11c !important}body{background:#fff;color:black}a{color:#11c;text-decoration:none}a:hover,a:active{text-decoration:underline}.fl a{color:#36c}a:visited{color:#551a8b}a.gb1,a.gb4{text-decoration:underline}a.gb3:hover{text-decoration:none}#ghead a.gb2:hover{color:#fff!important}.sblc{padding-top:5px}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px;}.lsbb{background:#eee;border:solid 1px;border-color:#ccc #999 #999 #ccc;height:30px;display:block}.ftl,#fll a{display:inline-block;margin:0 12px}.lsb{background:url(/images/srpr/nav_logo80.png) 0 -258px;border:none;color:#000;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}.lsb:active{background:#ccc}.lst:focus{outline:none}#addlang a{padding:0 3px}.gac_v div{display:none}.gac_v .gac_v2,.gac_bt{display:block!important}table.gssb_c{z-index:986  }</style><script></script></head><body bgcolor=#ffffff text=#000000 link=#0000cc vlink=#551a8b alink=#ff0000 onload="document.f&&document.f.q.focus();document.gbqf&&document.gbqf.q.focus();if(document.images)new Image().src=\'/images/srpr/nav_logo80.png\'" ><textarea id=csi style=display:none></textarea><div id=mngb><div id=gbar><nobr><b class=gb1>Web</b> <a class=gb1 href="http://www.google.co.in/imghp?hl=en&tab=wi">Images</a> <a class=gb1 href="http://maps.google.co.in/maps?hl=en&tab=wl">Maps</a> <a class=gb1 href="http://news.google.co.in/nwshp?hl=en&tab=wn">News</a> <a class=gb1 href="http://www.orkut.com/Main?tab=w0#Home">Orkut</a> <a class=gb1 href="http://translate.google.co.in/?hl=en&tab=wT">Translate</a> <a class=gb1 href="https://mail.google.com/mail/?tab=wm">Gmail</a> <a class=gb1 style="text-decoration:none" href="http://www.google.co.in/intl/en/options/"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe><a  href="/url?sa=p&pref=ig&pval=3&q=http://www.google.co.in/ig%3Fhl%3Den%26source%3Diglk&usg=AFQjCNHe9Dv_h1zYL1VKlS7wKo_0Kg38dg" class=gb4>iGoogle</a> | </span><a href="http://www.google.com/history/optout?hl=en" class=gb4>Web History</a> | <a  href="/preferences?hl=en" class=gb4>Settings</a> | <a id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=en&continue=http://www.google.co.in/" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div></div><center><br clear=all id=lgpd><div id=lga><div style="padding:28px 0 3px"><div align=left style="background:url(/intl/en_com/images/srpr/logo1w.png) no-repeat;height:110px;width:276px" title="Google" id=hplogo onload="window.lol&&lol()"><div nowrap style="color:#777;font-size:16px;font-weight:bold;left:214px;position:relative;top:70px">India</div></div></div><br></div><form action="/search" name=f><table cellpadding=0 cellspacing=0><tr valign=top><td width=25%>&nbsp;</td><td align=center nowrap><input name=hl type=hidden value=en><input name=source type=hidden value=hp><input type=hidden name=ie value="ISO-8859-1"><div class=ds style="height:32px;margin:4px 0"><input autocomplete=off maxlength=2048 name=q class="lst" title="Google Search" value="" size=57 style="background:#fff;border:1px solid #ccc;border-bottom-color:#999;border-right-color:#999;color:#000;margin:0;padding:5px 8px 0 6px;vertical-align:top"></div><br style="line-height:0"><span class=ds ><span class=lsbb><input name=btnG type=submit value="Google Search" class=lsb></span></span><span class=ds><span class=lsbb><input name=btnI type=submit class=lsb value="I&#39;m Feeling Lucky"></span></span></td><td nowrap width=25% align=left class="fl sblc"><a href="/advanced_search?hl=en">Advanced search</a><a href="/language_tools?hl=en">Language tools</a></td></tr></table><input type=hidden id=gbv name=gbv value="1"></form><div style="font-size:83%;min-height:3.5em"><br><div id=prm><span><font size="-1"><span style="color:red"></span>\'Tis the season. Google supports <a href="http://www.google.com/intl/en_gb/landing/givesback/2011/" onclick="google.promos&&google.promos.link&& google.promos.link.cl()">organisations that are changing the world</a></font><br/><br/><br/><script type="text/javascript">(function(){if(!google.promos)google.promos={};google.promos.ActionType={ACCEPT:"a",CANCEL:"c",DISMISS:"d",CLICK:"h",IMPRESSION:"i",NO_THANKS:"n",X_BUTTON:"x",MGMHP_ACCEPT:"ma",MGMHP_CANCEL:"mc",MGMHP_IMPRESSION:"mi",MGMHPPD_ACCEPT:"pa",MGMHPPD_CANCEL:"pc",MGMHPPD_IMPRESSION:"pi",MGMHPPD_NO_THANKS:"pn",MGMHPPD_NO_BUTTON:"px",MGMHPPD_DISMISS:"pd"};google.promos.sl=function(b,c,d,a){var e=[d,"id="+b,"loc="+google.sn];e.push("oi=promoslinger");if(a)e.push(a);google.log(c,e.join("&"))};google.promos.si=function(b,c,d,a){if(Math.random()<0.01)google.promos.sl(b,c,a?a:google.promos.ActionType.IMPRESSION,d)};})()\n</script><script type="text/javascript">(function(){var a,b;if(!google.promos.link)google.promos.link={};google.promos.link.cl=function(){try{google.promos.sl(b,a,google.promos.ActionType.CLICK)}catch(c){google.ml(c,false,{cause:a+"_CL"})}};google.promos.link.init=function(c,d){a=d;try{b=c;google.promos.si(b,a)}catch(e){google.ml(e,false,{cause:a+"_INIT"})}};})()\n</script><script>(function(){var sourceWebappPromoID=178001;var payloadType=3;\n\ngoogle.promos.link.init(sourceWebappPromoID,payloadType);})();</script> </span></div><div id=als><font size=-1 id=addlang>Google.co.in offered in: <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=hi">Hindi</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=bn">Bengali</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=te">Telugu</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=mr">Marathi</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=ta">Tamil</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=gu">Gujarati</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=kn">Kannada</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=ml">Malayalam</a> <a href="http://www.google.co.in/setprefs?sig=0_RmlgYFv10XYTtiOW9CPi-J0_bFI=&amp;hl=pa">Punjabi</a></font><br><br></div></div><div id=res></div><span id=footer><center id=fctr><div style="font-size:10pt"><div id=fll style="margin:19px auto;text-align:center"><a href="/intl/en/ads/">Advertising&nbsp;Programs</a><a href="http://www.google.co.in/services/">Business Solutions</a><a href="/intl/en/about.html">About Google</a><a href="http://www.google.com/ncr" class="gl nobr">Go to Google.com</a></div></div><p style="color:#767676;font-size:8pt">&copy; 2011 - <a href="/intl/en/privacy.html">Privacy</a></p></center></span> <div id=xjsd></div><div id=xjsi><script>if(google.y)google.y.first=[];google.dlj=function(b){window.setTimeout(function(){var a=document.createElement("script");a.src=b;document.getElementById("xjsd").appendChild(a)},0)};\nif(google.y)google.y.first=[];if(!google.xjs){google.dstr=[];google.rein=[];if(google.timers&&google.timers.load.t){google.timers.load.t.xjsls=new Date().getTime();}google.dlj(\'/extern_js/f/CgJlbhICaW4gACswRTgALCswWjgALCswDjgALCswPDgALCswUTgALCswCjgAmgICaGUsKzCYATgALCswFjgALCswGTgALCswQTgALCswTTgALCswTjgALCswVDgALCswaTgALCswkAE4ACwrMJIBOAAsKzAYOAAsKzAmOAAsgAJQkAJc/-qDiGnrVDPg.js\');google.xjs=1}google.neegg=1;google.mc=[];google.mc=google.mc.concat([[69,{}],[14,{}],[60,{}],[81,{}],[10,{"client":"hp","dh":true,"ds":"","host":"google.co.in","jsonp":true,"msgs":{"lcky":"I\\u0026#39;m Feeling Lucky","lml":"Learn more","psrc":"This search was removed from your \\u003Ca href=\\"/history\\"\\u003EWeb History\\u003C/a\\u003E","psrl":"Remove","srch":"Google Search"},"ovr":{"o":1,"ps":1,"sw":1},"pq":""}],[152,{}],[78,{}],[25,{"g":8,"k":false,"m":{"app":true,"bks":true,"blg":true,"dsc":true,"evn":true,"flm":true,"frm":true,"isch":true,"klg":true,"mbl":true,"nws":true,"plcs":true,"ppl":true,"prc":true,"pts":true,"rcp":true,"shop":true,"vid":true},"t":null}],[105,{}],[22,{"db":false,"m_errors":{"32":"Sorry, no more results to show.","default":"\\u003Cfont color=red\\u003EError:\\u003C/font\\u003E The server could not complete your request.  Try again in 30 seconds."},"m_tip":"Click for more information","nlpm":"153px 84px","nlpp":"153px 70px","utp":false}],[77,{}],[146,{}],[144,{}],[84,{}],[24,{}],[38,{}]]);google.y.first.push(function(){if(google.med){google.med(\'init\');google.initHistory();google.med(\'history\');}google.History&&google.History.initialize(\'/\')});if(google.j&&google.j.en&&google.j.xi){window.setTimeout(google.j.xi,0);}</script></div><script>(function(){\nvar b,d,e,f;function g(a,c){if(a.removeEventListener){a.removeEventListener("load",c,false);a.removeEventListener("error",c,false)}else{a.detachEvent("onload",c);a.detachEvent("onerror",c)}}function h(a){f=(new Date).getTime();++d;a=a||window.event;var c=a.target||a.srcElement;g(c,h)}var i=document.getElementsByTagName("img");b=i.length;d=0;for(var j=0,k;j<b;++j){k=i[j];if(k.complete||typeof k.src!="string"||!k.src)++d;else if(k.addEventListener){k.addEventListener("load",h,false);k.addEventListener("error",\nh,false)}else{k.attachEvent("onload",h);k.attachEvent("onerror",h)}}e=b-d;function l(){if(!google.timers.load.t)return;google.timers.load.t.ol=(new Date).getTime();google.timers.load.t.iml=f;google.kCSI.imc=d;google.kCSI.imn=b;google.kCSI.imp=e;if(google.stt!==undefined)google.kCSI.stt=google.stt;google.timers.load.t.xjs&&google.report&&google.report(google.timers.load,google.kCSI)}if(window.addEventListener)window.addEventListener("load",l,false);else if(window.attachEvent)window.attachEvent("onload",\nl);google.timers.load.t.prt=(f=(new Date).getTime());\n})();\n</script>'
+>>> url.info()
+<httplib.HTTPMessage instance at 0xb724d2cc>
+>>> 
+>>> 
+>>> url.geturl()
+'http://www.google.co.in/'
