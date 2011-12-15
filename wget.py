@@ -9,7 +9,7 @@ file = urllib.urlopen(url)
 print 'Meta Information of The Link'
 info = file.info()
 print info
-urllib.urlretrieve('http://www.google.com',path)
+urllib.urlretrieve(url,path)
 if info.gettype() == 'text/html':
 	text = file.read()
 	
