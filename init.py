@@ -1,9 +1,10 @@
 #!/usr/bin/python 
 import sys
+
 def main():
-	n = 10
+	n = 10 
 	print n
-	def add():
+	def add(): ##Function in python starts with def keyword
 		n+10
 	print n
 
