@@ -11,7 +11,7 @@ info = file.info()
 print info
 urllib.urlretrieve(url,path)
 if info.gettype() == 'text/html':
-	text = file.read()
+    text = file.read()
 	
 
 
